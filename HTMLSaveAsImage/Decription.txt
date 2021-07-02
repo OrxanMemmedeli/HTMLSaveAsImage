@@ -1,0 +1,40 @@
+﻿1.  open https://html2canvas.hertzen.com/ adress
+
+2. inlude     
+
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script src="~/ConvertToImage/canvas2image.js"></script>
+
+
+3. create 
+    <script>
+        $('#create').click(function () {
+            html2canvas(document.querySelector("#test")).then(canvas => {
+                document.body.appendChild(canvas);
+                return Canvas2Image.saveAsJPEG(canvas, null, null, '@docName');
+            });
+        });
+    </script>
+
+Canvas2image
+a tool of saving or converting canvas to images
+---------------------------
+Code
+you can just use it like this
+filename is optional, default is Date.now()
+
+Canvas2Image.saveAsImage(canvasObj, width, height, type, fileName)
+Canvas2Image.saveAsPNG(canvasObj, width, height, fileName)
+Canvas2Image.saveAsJPEG(canvasObj, width, height, fileName)
+Canvas2Image.saveAsGIF(canvasObj, width, height, fileName)
+Canvas2Image.saveAsBMP(canvasObj, width, height, fileName)
+
+Canvas2Image.convertToImage(canvasObj, width, height, type)
+Canvas2Image.convertToPNG(canvasObj, width, height)
+Canvas2Image.convertToJPEG(canvasObj, width, height)
+Canvas2Image.convertToGIF(canvasObj, width, height)
+Canvas2Image.convertToBMP(canvasObj, width, height)
+---------------------------
+License
+MIT
